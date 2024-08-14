@@ -11,26 +11,12 @@ import {
 } from 'react-native';
 
 const mockData = {
-  // backgroundImage:
-  //   'https://images.pexels.com/photos/1261728/pexels-photo-1261728.jpeg?auto=compress&cs=tinysrgb&w=600',
-  // profileImage:
-  //   'https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg?auto=compress&cs=tinysrgb&w=600',
-  // backgroundImage:
-  //   'https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=600',
-  // profileImage:
-  //   'https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=compress&cs=tinysrgb&w=600',
   name: 'Dr. Shankar Reddy',
   role: 'Nutritionist',
   location: 'Bangalore, India',
   followers: 12543,
   description: 'Expert in Nutrition and Wellness, sharing tips and recipes...',
   hashtags: '#Nutrition #Wellness #HealthyEating',
-  // feedImages: [
-  //   'https://images.pexels.com/photos/34534/people-peoples-homeless-male.jpg?auto=compress&cs=tinysrgb&w=600',
-  //   'https://images.pexels.com/photos/610294/pexels-photo-610294.jpeg?auto=compress&cs=tinysrgb&w=600',
-  //   'https://images.pexels.com/photos/936611/pexels-photo-936611.jpeg?auto=compress&cs=tinysrgb&w=600',
-  //   'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600',
-  // ],
   feedImages: [
     'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600',
     'https://images.pexels.com/photos/1116381/pexels-photo-1116381.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -43,19 +29,6 @@ const mockData = {
 
 const PersonalTabScreen = ({navigation}) => {
   const [bgColor, setBgColor] = useState('#000');
-
-  // useEffect(() => {
-  //   const fetchColors = async () => {
-  //     const result = await getImageColors(mockData.backgroundImage, {
-  //       fallback: '#000',
-  //       quality: 'low',
-  //     });
-
-  //     setBgColor(result.average || '#000');
-  //   };
-
-  //   fetchColors();
-  // }, []);
   useEffect(() => {
     const fetchColors = async () => {
       const result = await getImageColors(require('./background_image.jpeg'), {
@@ -135,9 +108,6 @@ const PersonalTabScreen = ({navigation}) => {
               style={styles.profileImage}
             />
             <Image
-              // source={{
-              //   uri: 'https://img.icons8.com/ios-filled/50/228BE6/instagram-verification-badge.png',
-              // }}
               source={require('./verified_badge.png')}
               style={styles.badgeImage}
             />
@@ -193,7 +163,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start', // Align items to the start
     width: '100%',
     paddingHorizontal: 20,
-    // marginBottom: 5, // Adjust margin to separate from feed grid
   },
   profileTextContainer: {
     flex: 1,
